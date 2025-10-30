@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hastakala</title>
+    <!-- Google Fonts: Classic serif for logo, readable serif for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!--
+      Responsive header for Hastakala
+      - Left: Logo (text-based)
+      - Center: Navigation
+      - Right: Search + Cart + Profile
+      - Mobile: Nav collapses behind hamburger
+    -->
+    <header class="site-header">
+        <!-- Mobile menu toggle (checkbox hack for pure CSS). Placed as a sibling to the mobile panel for CSS control -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" />
+        <div class="container">
+
+            <!-- Left: Brand logo/text -->
+             <!-- <img src="" alt=""> -->
+            <a href="#" class="brand" aria-label="Hastakala Home">Hastakala</a>
+
+            <!-- Hamburger button (label tied to #nav-toggle) -->
+            <label for="nav-toggle" class="hamburger" aria-label="Open navigation" aria-controls="primary-navigation"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Center: Search (middle) -->
+            <div class="search-center">
+                <form class="search" role="search" aria-label="Site search" action="#" method="get">
+                    <label for="q" class="sr-only">Search</label>
+                    <input id="q" name="q" type="search" placeholder="Search crafts" />
+                    <button type="submit" aria-label="Submit search">Search</button>
+                </form>
+            </div>
+
+            <!-- Right: Nav + Icons -->
+            <div class="right">
+                <nav id="primary-navigation" class="nav" aria-label="Primary">
+                    <ul>
+                        <li><a href="/home.html">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Artisans</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="actions">
+                    <a href="#" class="icon" aria-label="Cart" title="Cart">🛒</a>
+                    <a href="#" class="icon" aria-label="Profile" title="Profile">👤</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile slide-down container for nav when toggled -->
+        <div class="mobile-panel" aria-hidden="true">
+            <nav class="mobile-nav" aria-label="Mobile primary">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Artisans</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="page">
+        <!-- Hero Section: Celebrating Indian craftsmanship -->
+        <section class="hero-banner">
+            <div class="hero-content">
+                <h1 style="font-style: italic;">"Kala se kahani, kahani se Hastakala"</h1>
+                <p>Discover handmade treasures and the stories behind them.</p>
+                <a href="#" class="btn btn-primary">Shop Now</a>
+            </div>
+        </section>
+
+        <!-- Masonry Product Grid -->
+        <section class="products">
+            <div class="section-inner">
+                <div class="masonry">
+                    <!-- Card 1 -->
+                    <article class="masonry-item card">
+                        <img src="https://static.toiimg.com/thumb/msid-114818958,width-748,height-499,resizemode=4,imgsize-133614/.jpg" alt="Handcrafted clay pottery" />
+                        <div class="card-body">
+                            <h3>Terracotta Vase</h3>
+                            <p class="artisan">by Ananya, West Bengal</p>
+                        </div>
+                    </article>
+                    <!-- Card 2 -->
+                    <article class="masonry-item card">
+                        <img src="https://images.unsplash.com/photo-1524638431109-93d95c968f03?q=80&w=1200&auto=format&fit=crop" alt="Handwoven textile" />
+                        <div class="card-body">
+                            <h3>Handloom Shawl</h3>
+                            <p class="artisan">by Dev, Kutch</p>
+                        </div>
+                    </article>
+                    <!-- Card 3 -->
+                    <article class="masonry-item card">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Wood carving artisan work" />
+                        <div class="card-body">
+                            <h3>Sandalwood Carving</h3>
+                            <p class="artisan">by Meera, Karnataka</p>
+                        </div>
+                    </article>
+                    <!-- Card 4 -->
+                    <article class="masonry-item card">
+                        <img src="https://www.intermiles.com/iwov-resources/images/blog/indian-handicrafts-to-shop-for-to-add-the-ethnic-touch-to-your-home-this-festive-season/India-Mobile-414x233.jpg" alt="Traditional jewelry" />
+                        <div class="card-body">
+                            <h3>Filigree Earrings</h3>
+                            <p class="artisan">by Aarav, Cuttack</p>
+                        </div>
+                    </article>
+                    <!-- Card 5 -->
+                    <article class="masonry-item card">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/032/853/838/small/multi-colored-pottery-decoration-craft-souvenir-indigenous-culture-earthenware-bowl-terracotta-vase-generated-by-ai-free-photo.jpg" alt="Ceramic bowls" />
+                        <div class="card-body">
+                            <h3>Glazed Bowls</h3>
+                            <p class="artisan">by Riya, Jaipur</p>
+                        </div>
+                    </article>
+                    <!-- Card 6 -->
+                    <article class="masonry-item card">
+                        <img src="https://images.unsplash.com/photo-1542372147193-a7aca54189cd?q=80&w=1200&auto=format&fit=crop" alt="Hand-painted art" />
+                        <div class="card-body">
+                            <h3>Madhubani Painting</h3>
+                            <p class="artisan">by Sita, Bihar</p>
+                        </div>
+                    </article>
+                    <!-- Card 7 -->
+                    <article class="masonry-item card">
+                        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1200&auto=format&fit=crop" alt="Wicker basket" />
+                        <div class="card-body">
+                            <h3>Cane Basket</h3>
+                            <p class="artisan">by Om, Assam</p>
+                        </div>
+                    </article>
+                    <!-- Card 8 -->
+                    <article class="masonry-item card">
+                        <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/10/Blue-Pottery-Jaipur-Rajasthan.jpeg?resize=1200%2C847&ssl=1" alt="Handcrafted notebook" />
+                        <div class="card-body">
+                            <h3>Handmade Journal</h3>
+                            <p class="artisan">by Naina, Rajasthan</p>
+                        </div>
+                    </article>
+
+                    <article class="masonry-item card">
+                        <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/10/Blue-Pottery-Jaipur-Rajasthan.jpeg?resize=1200%2C847&ssl=1" alt="Handcrafted notebook" />
+                        <div class="card-body">
+                            <h3>Handmade Journal</h3>
+                            <p class="artisan">by Naina, Rajasthan</p>
+                        </div>
+                    </article>
+
+                    <article class="masonry-item card">
+                        <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/10/Blue-Pottery-Jaipur-Rajasthan.jpeg?resize=1200%2C847&ssl=1" alt="Handcrafted notebook" />
+                        <div class="card-body">
+                            <h3>Handmade Journal</h3>
+                            <p class="artisan">by Naina, Rajasthan</p>
+                        </div>
+                    </article>
+
+                    <article class="masonry-item card">
+                        <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/10/Blue-Pottery-Jaipur-Rajasthan.jpeg?resize=1200%2C847&ssl=1" alt="Handcrafted notebook" />
+                        <div class="card-body">
+                            <h3>Handmade Journal</h3>
+                            <p class="artisan">by Naina, Rajasthan</p>
+                        </div>
+                    </article>
+
+                    <article class="masonry-item card">
+                        <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/10/Blue-Pottery-Jaipur-Rajasthan.jpeg?resize=1200%2C847&ssl=1" alt="Handcrafted notebook" />
+                        <div class="card-body">
+                            <h3>Handmade Journal</h3>
+                            <p class="artisan">by Naina, Rajasthan</p>
+                        </div>
+                    </article>
+
+                    <article class="masonry-item card">
+                        <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/10/Blue-Pottery-Jaipur-Rajasthan.jpeg?resize=1200%2C847&ssl=1" alt="Handcrafted notebook" />
+                        <div class="card-body">
+                            <h3>Handmade Journal</h3>
+                            <p class="artisan">by Naina, Rajasthan</p>
+                        </div>
+                    </article>
+
+                    <article class="masonry-item card">
+                        <img src="https://images.unsplash.com/photo-1542372147193-a7aca54189cd?q=80&w=1200&auto=format&fit=crop" alt="Hand-painted art" />
+                        <div class="card-body">
+                            <h3>Madhubani Painting</h3>
+                            <p class="artisan">by Sita, Bihar</p>
+                        </div>
+                    </article>
+
+                    <article class="masonry-item card">
+                        <img src="https://images.unsplash.com/photo-1542372147193-a7aca54189cd?q=80&w=1200&auto=format&fit=crop" alt="Hand-painted art" />
+                        <div class="card-body">
+                            <h3>Madhubani Painting</h3>
+                            <p class="artisan">by Sita, Bihar</p>
+                        </div>
+                    </article>
+
+                    <article class="masonry-item card">
+                        <img src="https://images.unsplash.com/photo-1524638431109-93d95c968f03?q=80&w=1200&auto=format&fit=crop" alt="Handwoven textile" />
+                        <div class="card-body">
+                            <h3>Handloom Shawl</h3>
+                            <p class="artisan">by Dev, Kutch</p>
+                        </div>
+                    </article>
+
+                    <article class="masonry-item card">
+                        <img src="https://images.unsplash.com/photo-1524638431109-93d95c968f03?q=80&w=1200&auto=format&fit=crop" alt="Handwoven textile" />
+                        <div class="card-body">
+                            <h3>Handloom Shawl</h3>
+                            <p class="artisan">by Dev, Kutch</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,411 @@
+/*
+  Hastakala Header Styles
+  Palette:
+  - Background (light cream): #FFF8F2
+  - Primary text (brown): #8B5E3C
+  - Accent (beige): #F4E1C1
+
+  Typography:
+  - Brand: Playfair Display
+  - Body/Nav: Lora
+*/
+
+:root {
+  --bg:#f3e8d2;
+  --text: #8B5E3C;
+  --accent: #F4E1C1;
+  --text-dark: #6f4a31; /* hover darken */
+  --ring: rgba(139, 94, 60, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Lora', serif;
+}
+
+/* Utility to hide labels but keep accessible */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Header base */
+.site-header {
+  background-color: #f3e8d2;
+  border-bottom: 1px solid var(--accent);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* left: brand, center: search, right: nav+icons */
+  align-items: center;
+  gap: 16px;
+}
+
+/* Brand */
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #68211a;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+/* Nav */
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #68211a;
+  transition: color 160ms ease;
+  font-weight: 500;
+  
+}
+
+.nav a:hover {
+  color: var(--text-dark);
+}
+
+/* Actions (search + icons) */
+.actions {
+  display: flex;
+  align-items:flex-end;
+  gap: 12px;
+  margin-left: 20px;
+}
+
+/* Right group holding nav + icons */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-self: end;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 6px 8px 6px 12px;
+  color: #68211a;
+}
+
+.search input[type="search"] {
+  border: none;
+  outline: none;
+  font: inherit;
+  color: #68211a;
+  background: transparent;
+  width: 100%;
+  min-width: 0; /* allow shrinking inside grid */
+}
+
+.search input::placeholder {
+  color: #68211a;
+}
+
+.search button {
+  border: none;
+  background: var(--accent);
+  color: var(--text);
+  font: inherit;
+  padding: 6px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: filter 160ms ease, box-shadow 120ms ease;
+  color: #68211a
+}
+
+.search button:hover {
+  filter: brightness(0.97);
+}
+
+.search button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ring);
+}
+
+.icon {
+  text-decoration: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 6px 8px;
+  border-radius: 8px;
+  transition: background-color 160ms ease;
+  color: var(--text);
+}
+
+.icon:hover {
+  background: var(--accent);
+}
+
+/* Center search wrapper to constrain width while staying centered */
+.search-center {
+  justify-self: center;
+  width: 100%;
+  max-width: 560px;
+}
+
+/* Hamburger (shown on small screens) */
+.nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 160ms ease;
+}
+
+.hamburger:hover { background: var(--accent); }
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+}
+
+/* Mobile collapsible panel */
+.mobile-panel {
+  display: none;
+  overflow: hidden;
+  background: var(--bg);
+  border-top: 1px solid var(--accent);
+}
+
+.mobile-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 8px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 10px 8px;
+  border-radius: 8px;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+
+.mobile-nav a:hover {
+  background: var(--accent);
+  color: var(--text-dark);
+}
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+  .nav { display: none; } /* hide desktop nav */
+
+  .hamburger { display: flex; } /* show hamburger */
+
+  .search-center { max-width: 420px; }
+
+  /* Show the mobile panel when toggled */
+  .nav-toggle:checked ~ .container .hamburger { background: var(--accent); }
+  .nav-toggle:checked ~ .mobile-panel { display: block; }
+}
+
+/* Slightly tighter at very small widths */
+@media (max-width: 600px) {
+  .site-header .container {
+    gap: 8px;
+  }
+
+  .search-center { max-width: 300px; }
+
+  .icon { font-size: 1.1rem; }
+}
+
+/* Main page demo spacing */
+.page .hero {
+  padding: 48px 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.page .hero h1 {
+  margin: 0 0 12px;
+  font-family: 'Playfair Display', serif;
+  
+}
+
+.page .hero p {
+  margin: 0;
+  color: #68211a;
+}
+
+/* =========================
+   Hero Section
+   ========================= */
+.hero-banner {
+  /* Soft beige gradient overlay over an Indian handicraft related image */
+  background-image:
+    linear-gradient(to bottom, rgba(244, 225, 193, 0.65), rgba(255, 248, 242, 0.85)),
+    url('https://images.pexels.com/photos/31102560/pexels-photo-31102560.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 56vh;
+  display: grid;
+  place-items: center;
+  padding: 48px 16px;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 900px;
+  color: #68211a;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw + 0.5rem, 3.25rem);
+  margin: 0 0 12px;
+}
+
+.hero-content p {
+  font-size: clamp(1rem, 1.2vw + 0.8rem, 1.2rem);
+  margin: 0 0 20px;
+  color: #68211a;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 10px 18px;
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.btn-primary {
+  background: #68211a;
+  color: #f3e8d2;
+  box-shadow: 0 6px 20px rgba(139, 94, 60, 0.2);
+}
+
+.btn-primary:hover {
+  filter: brightness(0.97);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(139, 94, 60, 0.28);
+}
+
+/* =========================
+   Products Section
+   ========================= */
+.products {
+  padding: 32px 16px 64px;
+}
+
+.products .section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Masonry: CSS multi-column layout for Pinterest-style grid */
+.masonry {
+  column-count: 4;
+  column-gap: 16px;
+}
+
+/* Masonry responsiveness */
+@media (max-width: 1100px) {
+  .masonry { column-count: 3; }
+}
+@media (max-width: 800px) {
+  .masonry { column-count: 2; }
+}
+@media (max-width: 520px) {
+  .masonry { column-count: 1; }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin: 0 0 16px;
+  display: inline-block;
+  width: 100%;
+  color:#68211a;
+}
+
+/* Product Card */
+.card {
+  background: #fff;
+  border: 1px solid var(--accent);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(139, 94, 60, 0.08);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  color:#68211a;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 28px rgba(139, 94, 60, 0.14);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.card-body {
+  padding: 12px 14px 16px;
+  color: var(--text);
+}
+
+.card-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color:#68211a;
+  margin: 0 0 6px;
+}
+
+.card-body .artisan {
+  margin: 0;
+  font-style: italic;
+  color:#68211a;
+  opacity: 0.8;
+}
