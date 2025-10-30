@@ -68,7 +68,12 @@ body {
 }
 
 /* Brand */
+/* Move 'Hastakala' to the left corner */
 .brand {
+  position: absolute;
+  left: 16px;       /* distance from the very left edge */
+  top: 50%;
+  transform: translateY(-50%);
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   font-size: 1.5rem;
@@ -76,6 +81,7 @@ body {
   text-decoration: none;
   letter-spacing: 0.5px;
 }
+
 
 /* Nav */
 .nav ul {
@@ -161,6 +167,45 @@ body {
   box-shadow: 0 0 0 3px var(--ring);
 }
 
+/* Make sure header can hold absolute positioning */
+.site-header {
+  position: relative;
+}
+
+/* Search bar stays perfectly centered */
+.search-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 560px;
+}
+
+/* Brand (Hastakala) on the far left */
+.brand {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #68211a;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.actions {
+  position: absolute;
+  right: 16px;           
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;            
+}
+
 .icon {
   text-decoration: none;
   font-size: 1.2rem;
@@ -175,9 +220,10 @@ body {
   background: var(--accent);
 }
 
-/* Center search wrapper to constrain width while staying centered */
+
 .search-center {
   justify-self: center;
+
   width: 100%;
   max-width: 560px;
 }
