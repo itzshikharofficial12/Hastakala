@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hastakala · Product</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <!-- Shared site styles (header/footer/theme) -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="product.css" />
+</head>
+
+<body>
+    <!-- Header copied from index.html for consistency -->
+    <header class="site-header">
+        <!-- Mobile menu toggle (checkbox hack for pure CSS). Placed as a sibling to the mobile panel for CSS control -->
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" />
+        <div class="container">
+
+            <!-- Left: Brand logo/text -->
+            <!-- <img src="" alt=""> -->
+            <a href="#" class="brand" aria-label="Hastakala Home">Hastakala</a>
+
+            <!-- Hamburger button (label tied to #nav-toggle) -->
+            <label for="nav-toggle" class="hamburger" aria-label="Open navigation" aria-controls="primary-navigation"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Center: Search (middle) -->
+            <div class="search-center">
+                <form class="search" role="search" aria-label="Site search" action="#" method="get">
+                    <label for="q" class="sr-only">Search</label>
+                    <input id="q" name="q" type="search" placeholder="Search crafts" />
+                    <button type="submit" aria-label="Submit search">Search</button>
+                </form>
+            </div>
+
+            <!-- Right: Nav + Icons -->
+            <div class="right">
+                <nav id="primary-navigation" class="nav" aria-label="Primary">
+                    <ul>
+                        <li><a href="/home.html">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Artisans</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="actions">
+                    <a href="#" class="icon" aria-label="Cart" title="Cart">🛒</a>
+                    <a href="#" class="icon" aria-label="Profile" title="Profile">👤</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile slide-down container for nav when toggled -->
+        <div class="mobile-panel" aria-hidden="true">
+            <nav class="mobile-nav" aria-label="Mobile primary">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Artisans</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="product-page">
+        <!-- Main Product Section -->
+        <section class="product-hero">
+            <div class="product-media">
+                <!-- <img id="productImage"
+                    src="https://images.unsplash.com/photo-1567965237388-6f22cd6b1a48?q=80&w=1200&auto=format&fit=crop"
+                    alt="Terracotta Vase"/> -->
+                <video height="700px" width="500px" autoplay loop muted>
+                    <source src="/assests/Video-118.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="product-info">
+                <h1 id="productTitle">Terracotta Vase</h1>
+                <div class="artist-row">
+                    <img class="artist-avatar" id="artistAvatar" src="https://i.pravatar.cc/64?img=12"
+                        alt="Artist avatar" />
+                    <p class="artist" id="productArtist">by Meera Sharma</p>
+                </div>
+                <p id="productDescription">Nitin5Art creates realistic handmade portraits and sketches that capture
+                    emotions with stunning detail. Each artwork is crafted with precision, patience, and passion —
+                    turning photographs into timeless keepsakes.</p>
+                <p>Bring your memories and inspirations to life with custom handmade portraits and paintings by Nitin5Art. Each piece is meticulously crafted using high-quality materials — from realistic pencil and charcoal sketches to vibrant acrylic and oil paintings, and even high-resolution digital portraits. Fully personalized from your photo or chosen reference, these artworks capture every expression and emotion with lifelike detail. Perfect as a heartfelt gift, spiritual décor, or a keepsake to cherish forever, each portrait is carefully created, packaged, and delivered to your doorstep. Choose your preferred medium, size, and theme, and let art tell your story.
+                </p>
+                <a class="btn btn-accent follow-btn" id="followArtist" href="#" aria-label="Follow artist">Add to
+                    Cart</a>
+                <a class="btn btn-accent follow-btn" id="followArtist" href="https://www.instagram.com/nitin5art/"
+                    aria-label="Follow artist">Follow Artist</a>
+            </div>
+        </section>
+
+        <!-- More Images Section -->
+        <section class="product-gallery">
+            <h2>More Products</h2>
+            <div class="gallery-grid" id="moreImages">
+                <img src="https://images.unsplash.com/photo-1542372147193-a7aca54189cd?q=80&w=800&auto=format&fit=crop"
+                    alt="Product angle 1" />
+                <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=800&auto=format&fit=crop"
+                    alt="Product angle 2" />
+                <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1200&auto=format&fit=crop"
+                    alt="Product angle 3" />
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=800&auto=format&fit=crop"
+                    alt="Product angle 4" />
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (same as main site) -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-col brand">
+                    <h2 class="brand-name">Hastakala</h2>
+                    <p class="tagline">Connecting artisans with art lovers across India and beyond.</p>
+                    <div class="socials">
+                        <a class="social" href="#" aria-label="Instagram" title="Instagram">📸</a>
+                        <a class="social" href="#" aria-label="Pinterest" title="Pinterest">📌</a>
+                        <a class="social" href="#" aria-label="WhatsApp" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+                <div class="footer-col links">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Seller Login</a></li>
+                        <li><a href="#">Buyer Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Get updates on new artisans and products</p>
+                    <form class="newsletter-form" action="#" method="post">
+                        <label for="email" class="sr-only">Email address</label>
+                        <input id="email" name="email" type="email" placeholder="Enter your email" required />
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <p class="copy">© 2025 Hastakala. All rights reserved.</p>
+                <nav class="legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="sep">|</span>
+                    <a href="#">Terms of Service</a>
+                    <span class="sep">|</span>
+                    <a href="#">Shipping Info</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Optional: populate product details from URL params (e.g., product.html?title=...&artist=...&image=...)
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const title = params.get('title');
+            const artist = params.get('artist');
+            const image = params.get('image');
+            const images = params.get('images'); // comma-separated
+            const avatar = params.get('avatar');
+            const follow = params.get('follow'); // link to social or profile
+
+            if (title) document.getElementById('productTitle').textContent = title;
+            if (artist) document.getElementById('productArtist').textContent = 'by ' + artist;
+            if (image) {
+                const img = document.getElementById('productImage');
+                img.src = image; img.alt = title || img.alt;
+            }
+            if (avatar) {
+                const av = document.getElementById('artistAvatar');
+                av.src = avatar;
+            }
+            if (follow) {
+                const btn = document.getElementById('followArtist');
+                btn.href = follow;
+                btn.target = '_blank';
+                btn.rel = 'noopener noreferrer';
+            }
+            if (images) {
+                const grid = document.getElementById('moreImages');
+                grid.innerHTML = '';
+                images.split(',').slice(0, 6).forEach((u, i) => {
+                    const im = document.createElement('img');
+                    im.src = u.trim();
+                    im.alt = 'Product angle ' + (i + 1);
+                    grid.appendChild(im);
+                });
+            }
+        })();
+    </script>
+</body>
+
+</html>

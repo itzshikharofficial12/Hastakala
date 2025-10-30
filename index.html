@@ -107,7 +107,7 @@
                     </article>
                     <!-- Card 2 -->
                     <article class="masonry-item card">
-                        <img src="https://images.unsplash.com/photo-1524638431109-93d95c968f03?q=80&w=1200&auto=format&fit=crop" alt="Handwoven textile" />
+                        <img src="/assests/44662776ac7603bb5b2cd3770d731ac8.jpg" />
                         <div class="card-body">
                             <h3>Handloom Shawl</h3>
                             <p class="artisan">by Dev, Kutch</p>
@@ -115,7 +115,7 @@
                     </article>
                     <!-- Card 3 -->
                     <article class="masonry-item card">
-                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Wood carving artisan work" />
+                        <img src="/assests/5cde3f89b1f4723e3ece5bf357d10a12.jpg" />
                         <div class="card-body">
                             <h3>Sandalwood Carving</h3>
                             <p class="artisan">by Meera, Karnataka</p>
@@ -139,15 +139,18 @@
                     </article>
                     <!-- Card 6 -->
                     <article class="masonry-item card">
-                        <img src="https://images.unsplash.com/photo-1542372147193-a7aca54189cd?q=80&w=1200&auto=format&fit=crop" alt="Hand-painted art" />
+                        <!-- <img src="https://images.unsplash.com/photo-1542372147193-a7aca54189cd?q=80&w=1200&auto=format&fit=crop" alt="Hand-painted art" /> -->
+                         <video height="560px" width="320px" autoplay loop muted>
+                            <source src="/assests/Video-118.mp4" type="video/mp4">
+                         </video>
                         <div class="card-body">
-                            <h3>Madhubani Painting</h3>
-                            <p class="artisan">by Sita, Bihar</p>
+                            <h3>Realistic Portrait Painting</h3>
+                            <p class="artisan">by Nitinkumar Zala</p>
                         </div>
                     </article>
                     <!-- Card 7 -->
                     <article class="masonry-item card">
-                        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=1200&auto=format&fit=crop" alt="Wicker basket" />
+                        <img src="/assests/6d6e49251b7e54437dd38e611b98fd08.jpg" alt="Wicker basket" />
                         <div class="card-body">
                             <h3>Cane Basket</h3>
                             <p class="artisan">by Om, Assam</p>
@@ -155,7 +158,7 @@
                     </article>
                     <!-- Card 8 -->
                     <article class="masonry-item card">
-                        <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/10/Blue-Pottery-Jaipur-Rajasthan.jpeg?resize=1200%2C847&ssl=1" alt="Handcrafted notebook" />
+                        <img src="/assests/728954bd115b2a4ce3c238eb8d16318c.jpg" alt="Handcrafted notebook" />
                         <div class="card-body">
                             <h3>Handmade Journal</h3>
                             <p class="artisan">by Naina, Rajasthan</p>
@@ -171,7 +174,7 @@
                     </article>
 
                     <article class="masonry-item card">
-                        <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/10/Blue-Pottery-Jaipur-Rajasthan.jpeg?resize=1200%2C847&ssl=1" alt="Handcrafted notebook" />
+                        <img src="/assests/887301826c3eef843130a0bc9c1f54a1.jpg" alt="Handcrafted notebook" />
                         <div class="card-body">
                             <h3>Handmade Journal</h3>
                             <p class="artisan">by Naina, Rajasthan</p>
@@ -187,7 +190,7 @@
                     </article>
 
                     <article class="masonry-item card">
-                        <img src="https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2022/10/Blue-Pottery-Jaipur-Rajasthan.jpeg?resize=1200%2C847&ssl=1" alt="Handcrafted notebook" />
+                        <img src="/assests/92de63f8a5f5d83e33f07940a5f33241.jpg" alt="Handcrafted notebook" />
                         <div class="card-body">
                             <h3>Handmade Journal</h3>
                             <p class="artisan">by Naina, Rajasthan</p>
@@ -219,7 +222,7 @@
                     </article>
 
                     <article class="masonry-item card">
-                        <img src="https://images.unsplash.com/photo-1524638431109-93d95c968f03?q=80&w=1200&auto=format&fit=crop" alt="Handwoven textile" />
+                        <img src="/assests/e938df00fd31c06b333f22f6757c987c.jpg" />
                         <div class="card-body">
                             <h3>Handloom Shawl</h3>
                             <p class="artisan">by Dev, Kutch</p>
@@ -227,7 +230,7 @@
                     </article>
 
                     <article class="masonry-item card">
-                        <img src="https://images.unsplash.com/photo-1524638431109-93d95c968f03?q=80&w=1200&auto=format&fit=crop" alt="Handwoven textile" />
+                        <img src="/assests/728954bd115b2a4ce3c238eb8d16318c.jpg" alt="Handwoven textile" />
                         <div class="card-body">
                             <h3>Handloom Shawl</h3>
                             <p class="artisan">by Dev, Kutch</p>
@@ -237,6 +240,84 @@
             </div>
         </section>
     </main>
+
+    <script>
+      // Navigate to product page on card click with basic details via query params
+      (function() {
+        document.addEventListener('click', function(e) {
+          const card = e.target.closest('.masonry .card');
+          if (!card) return;
+          e.preventDefault();
+          const title = encodeURIComponent(card.querySelector('h3')?.textContent || 'Product');
+          const artist = encodeURIComponent((card.querySelector('.artisan')?.textContent || '').replace(/^by\s+/i, ''));
+          const image = encodeURIComponent(card.querySelector('img')?.src || '');
+          const url = `product.html?title=${title}&artist=${artist}&image=${image}`;
+          window.location.href = url;
+        });
+      })();
+    </script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-col brand">
+                    <h2 class="brand-name">Hastakala</h2>
+                    <p class="tagline">Connecting artisans with art lovers across India and beyond.</p>
+                    <div class="socials">
+                        <a class="social" href="#" aria-label="Instagram" title="Instagram">📸</a>
+                        <a class="social" href="#" aria-label="Pinterest" title="Pinterest">📌</a>
+                        <a class="social" href="#" aria-label="WhatsApp" title="WhatsApp">💬</a>
+                    </div>
+                </div>
+
+                <!-- About -->
+                <div class="footer-col links">
+                    <h3>About</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-col links">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Seller Login</a></li>
+                        <li><a href="#">Buyer Help Center</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-col newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Get updates on new artisans and products</p>
+                    <form class="newsletter-form" action="#" method="post">
+                        <label for="footer-email" class="sr-only">Email address</label>
+                        <input id="footer-email" name="email" type="email" placeholder="Enter your email" required />
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-inner">
+                <p class="copy">© 2025 Hastakala. All rights reserved.</p>
+                <nav class="legal">
+                    <a href="#">Privacy Policy</a>
+                    <span class="sep">|</span>
+                    <a href="#">Terms of Service</a>
+                    <span class="sep">|</span>
+                    <a href="#">Shipping Info</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
